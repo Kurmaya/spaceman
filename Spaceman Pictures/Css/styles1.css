@@ -28,7 +28,7 @@ a {
 }
 
 .brand-img:hover {
-  background-image: url(Images\Spaceman text.png);
+  background-image: url('Images\Spaceman text.png');
   transform: scale(1.1);
 }
 
