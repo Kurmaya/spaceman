@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: "open sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navrbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.brand-img {
+  height: 110px;
+  width: 140px;
+  transition: .5s ease-in-out;
+}
+
+.brand-img:hover {
+  background-image: url(Images\Spaceman text.png);
+  transform: scale(1.1);
+}
+
+.brand {
+  margin: 8px 0 8px 15px;
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  min-height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-item {
+  transition: .7s ease;
+}
+
+.nav-link:hover {
+  transform: scale(.98) color:#FFC23C;
+}
+
+.ani {
+  display: inline-block;
+  position: relative;
+  color:
+    #0087ca;
+}
+
+.ani:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 15px;
+  left: 25%;
+  background-color:
+    #0087ca;
+  transform-origin: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.ani:hover:after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.toggle-button {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+@media (max-width:768px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-button.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #FFC23C;
+  }
+
+  .toggle-button.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #FFC23C;
+  }
+
+  .navbar-links {
+    display: block;
+    position: absolute;
+    left: -100%;
+    top: 110px;
+    gap: 10px;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
+  }
+
+  .nav-item {
+    margin: 3rem 0;
+    padding: 10px;
+  }
+
+  .navbar-links.active {
+    left: 0;
+  }
+
+  .mid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ani:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 15px;
+    left: 43%;
+    background-color:
+      #0087ca;
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+nav .nav-item {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-family: "nasalization", sans-serif;
+  letter-spacing: 1px;
+  padding: 15px;
+  line-height: 1.5;
+  margin-top: 15px;
+  font-size: 1.5rem;
+  transition: .5s;
+  z-index: 11;
+}
+
+.nav-item:hover {
+  transform: scale(.95);
+  color: #FFC23C;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 25px 0 30px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 10px;
+}
+
+.grid img {
+  aspect-ratio: 1/1.25;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  border-radius: 10%;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  transition: .5s;
+  color: white;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  border-radius: 10%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transform: translatey(30px);
+  transition: .6s;
+  margin-top: 25%;
+  font-family: "open-sans", sans-serif;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay:hover>* {
+  transform: translatey(0);
+}
+
+@media (min-width:680px) {
+  .card.featured {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  .featured img {
+    aspect-ratio: 1/1.25;
+    object-fit: cover;
+  }
+
+  .card img {
+    aspect-ratio: 1/1;
+  }
+
+  .container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+#top {
+  width: 85%;
+  position: relative;
+  margin: auto;
+}
+
+#middle {
+  height: 100%;
+  width: 100%;
+  padding-top: 40px;
+  background-color: black;
+  position: relative;
+}
+
+#middle h2 {
+  color: white;
+  text-align: center;
+  font-family: "nasalization", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: .2em;
+  padding: 50px;
+  margin: 30px auto;
+}
+
+.mid-container {
+  text-align: center;
+  width: 89%;
+  height: 100%;
+  margin: 0 auto;
+  color: white;
+  padding: 15px;
+  position: relative;
+}
+
+.mid-container p {
+  width: 75%;
+  line-height: 1.5;
+  margin: 5% auto;
+  font-family: "Open sans", sans-serif;
+}
+
+.mid-container img {
+  max-width: 90%;
+  border-radius: 10%;
+}
+
+#footer {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  padding: 5px;
+}
+
+.social {
+  position: relative;
+  color: white;
+  padding: 5px;
+}
+
+.social h3 {
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  padding: 10px 0;
+  font-family: "nasalization", sans-serif;
+}
+
+.social p {
+  font-size: 1rem;
+  padding: 10px 0;
+  margin: 5px auto;
+}
+
+.social .fa-brands {
+  padding: 0 15px;
+  margin: auto 10px;
+  transition: 0.5s;
+  font-size: 1.5rem;
+}
+
+.social .fa-brands:hover {
+  color: #FFC23C;
+  transform: scale(1.2);
+}
+
+/* contact page  */
+#contact-details {
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.contact-container {
+  margin: 30px auto;
+  padding: 40px 0;
+  height: 100%;
+  width: 80%;
+}
+
+.details h1 {
+  font-family: "nasalization", sans-serif;
+  font-size: 2rem;
+  letter-spacing: .5rem;
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+.details h3 {
+  padding-bottom: 10px;
+  font-family: "open sans", sans-serif;
+}
+
+.details p {
+  line-height: 1.5;
+  width: 75%;
+  margin: auto;
+}
+
+.box span {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5;
+  font-family: "open sans", sans-serif;
+}
+
+.box {
+  padding: 10px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.box i {
+  font-size: 2rem;
+}
+
+.box :nth-child(1) {
+  padding-top: 15px;
+}

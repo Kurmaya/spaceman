@@ -1,0 +1,74 @@
+body{
+  margin:0;
+  padding:0;
+  }
+h1{
+  font-size: 3rem;
+  color:white;
+  font-family: "nasalization", sans-serif;
+
+  line-height: 1.5;
+  padding:10px;
+  transition: .6s;
+  cursor:default;
+}
+h1:hover{
+  transform: scale(1.2);
+  letter-spacing: .2rem;
+  color:#FFC23C;
+}
+h3{
+  font-size: 2rem;
+  color:white;
+  font-family: sans-serif;
+}
+a{
+  text-decoration: none;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+
+}
+.top{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  padding: 0 20px;
+
+}
+.vid-container{
+  height:100%;
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  overflow: hidden;
+
+}
+.vid-container video{
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+
+}
+.vid-container:after{
+  content:'';
+  height:100%;
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top:0;
+  left:0;
+}
+.container{
+  z-index: 10;
+}
