@@ -28,7 +28,7 @@ a {
 }
 
 .brand-img:hover {
-  background-image: url('Images\Spaceman text.png');
+  background-image: url(Images\Spaceman text.png);
   transform: scale(1.1);
 }
 
@@ -50,6 +50,7 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 60px;
+
 }
 
 .nav-item {
@@ -132,6 +133,7 @@ a {
     text-align: center;
     transition: 0.3s;
     z-index: 1;
+    
   }
 
   .nav-item {
@@ -143,20 +145,14 @@ a {
     left: 0;
   }
 
-  .mid-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .ani:after {
     content: '';
     position: absolute;
-    width: 100px;
+    width: 20%;
     transform: scaleX(0);
     height: 2px;
     bottom: 15px;
-    left: 43%;
+    left: 40%;
     background-color:
       #0087ca;
     transform-origin: center;
@@ -187,6 +183,13 @@ nav .nav-item {
   color: #FFC23C;
 }
 
+/* top section */
+#top {
+  width: 85%;
+  position: relative;
+  margin: auto;
+}
+
 .container {
   width: 90%;
   margin: auto;
@@ -204,12 +207,12 @@ nav .nav-item {
   aspect-ratio: 1/1.25;
   width: 100%;
   object-fit: cover;
-  border-radius: 10%;
+  border-radius: 1%;
 }
 
 .card {
   aspect-ratio: 1/1;
-  border-radius: 10%;
+  border-radius: 5%;
   position: relative;
 }
 
@@ -224,7 +227,7 @@ nav .nav-item {
   color: white;
   transform: translate(-50%, -50%);
   opacity: 0;
-  border-radius: 10%;
+  border-radius: 1%;
 }
 
 .content {
@@ -245,6 +248,7 @@ nav .nav-item {
 
 .overlay:hover>* {
   transform: translatey(0);
+  justify-content: center;
 }
 
 @media (min-width:680px) {
@@ -269,12 +273,7 @@ nav .nav-item {
   }
 }
 
-#top {
-  width: 85%;
-  position: relative;
-  margin: auto;
-}
-
+/* -middle section// */
 #middle {
   height: 100%;
   width: 100%;
@@ -295,6 +294,9 @@ nav .nav-item {
 }
 
 .mid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 89%;
   height: 100%;
@@ -316,6 +318,7 @@ nav .nav-item {
   border-radius: 10%;
 }
 
+/* footer section */
 #footer {
   width: 100%;
   background-color: black;
@@ -357,8 +360,23 @@ nav .nav-item {
 /* contact page  */
 #contact-details {
   width: 90%;
+  height: 100%;
   margin: 10px auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.bgi {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 900px;
+  height: 800px;
+  margin-top: -400px;
+  margin-left: -450px;
+  opacity: .25;
+  z-index: -1;
 }
 
 .contact-container {
